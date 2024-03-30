@@ -47,7 +47,8 @@
 
         $atributos = shortcode_atts(
             array(
-                'text_button' => 'Comprar este curso' // Valor por defecto si no se proporciona el atributo
+                'text_button' => 'Comprar este curso',
+                'display_price' => 'no'
             ),
             $atts
         );
@@ -65,8 +66,10 @@
         $response_instructor = RfCoreCurl::curl('/api/instructor/'.$response_curso->id_instructor , 'GET' , $token, NULL);
 
         $text_button = esc_attr($atributos['text_button']);
+        $display_price = esc_attr($atributos['display_price']);
 
         $smarty->assign('text_button' , $text_button);
+        $smarty->assign('display_price' , $display_price);
         $smarty->assign('id_curso', $id_curso);
         $smarty->assign('curso', $response_curso);
         $smarty->assign('instructor' , $response_instructor->response);

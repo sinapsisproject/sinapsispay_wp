@@ -1,3 +1,17 @@
+
+{if $display_price == 'si'}
+<div class="col-12 d-inline-flex">
+  <button onclick="create_transaction({$id_curso})" type="button">
+        <div id="loading_create_transaction_user" style="width: 1rem; height: 1rem; margin-right: 6px; display: none;" class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        {$text_button}
+        <i style="margin-left: 10px;" class="fa-solid fa-arrow-right"></i>
+    </button>
+    <h3 class="title-price">$ {$curso->precio|number_format:0:',':'.'}</h3>
+</div>
+{/if}
+{if $display_price == 'no'}
 <button onclick="create_transaction({$id_curso})" type="button">
     <div id="loading_create_transaction_user" style="width: 1rem; height: 1rem; margin-right: 6px; display: none;" class="spinner-border" role="status">
         <span class="visually-hidden">Loading...</span>
@@ -5,8 +19,8 @@
     {$text_button}
     <i style="margin-left: 10px;" class="fa-solid fa-arrow-right"></i>
 </button>
+{/if}
 
- <!-- data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" -->
 <div class="modal fade" id="modalpay" data-bs-backdrop="static" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content">
