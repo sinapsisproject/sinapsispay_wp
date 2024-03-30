@@ -1,0 +1,42 @@
+.modal-pay{
+    background: #445AFF !important;
+}
+
+.description-pay{
+    padding: 70px;
+    color: white;
+}
+
+.description-pay{
+    text-align: justify;
+}
+
+.doctor-pay p{
+    font-size: 19px;
+    text-align: left;
+}
+
+.img-curso-pay{
+    padding-top: 90px;
+}
+
+.img-courses-pay{
+    height: 300px;
+    background-position: 50%;
+    background-size: cover;
+}
+.box-total-pay{
+    padding: 70px;
+    color: white;
+}
+
+.total-pay p{
+    font-size: 25px;
+}
+.total-price p{
+    font-size: 25px;
+}
+
+.button_pay{
+    background: #2c42e5 !important;
+}
