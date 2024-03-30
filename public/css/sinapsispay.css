@@ -40,3 +40,8 @@
 .button_pay{
     background: #2c42e5 !important;
 }
+
+#divbuttonpay input{
+    background: white !important;
+    color: #445AFF !important;
+}
