@@ -3,6 +3,7 @@
         <span class="visually-hidden">Loading...</span>
     </div>
     {$text_button}
+    <i style="margin-left: 10px;" class="fa-solid fa-arrow-right"></i>
 </button>
 
  <!-- data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" -->
