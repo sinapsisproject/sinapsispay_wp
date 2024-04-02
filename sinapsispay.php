@@ -62,7 +62,8 @@
 
         $token = get_option('tokensinapsisplatform');
 
-        $response_curso = RfCoreCurl::curl('/api/course/get_course_by_id/'.$id_curso , 'GET' , $token, NULL);
+        $validate_user = RfCoreCurl::curl('/api/users/validate_course_user/'.$id_curso , 'GET' , $token, NULL);
+        $response_curso = RfCoreCurl::curl('/api/course/get_course_by_id_free_data/'.$id_curso , 'GET' , NULL, NULL);
         $response_instructor = RfCoreCurl::curl('/api/instructor/'.$response_curso->id_instructor , 'GET' , $token, NULL);
 
         $text_button = esc_attr($atributos['text_button']);
@@ -73,6 +74,8 @@
         $smarty->assign('id_curso', $id_curso);
         $smarty->assign('curso', $response_curso);
         $smarty->assign('instructor' , $response_instructor->response);
+        $smarty->assign('perfil_user' , $validate_user->status);
+        
 
         return $smarty->fetch('create_transaction_button.tpl');
 

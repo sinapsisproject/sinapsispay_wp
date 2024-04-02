@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.4.1, created on 2024-04-02 04:35:17
-  from 'C:\wamp64\www\sinapsis\wp-content\plugins\sinapsispay_wp\public\partials\create_transaction_button.tpl' */
+/* Smarty version 4.4.1, created on 2024-03-30 05:26:32
+  from '/home2/sinapsi6/public_html/wp-content/plugins/sinapsispay_wp/public/partials/create_transaction_button.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.4.1',
-  'unifunc' => 'content_660b8b0548d969_37738711',
+  'unifunc' => 'content_6607a2889d2655_23823836',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '86ff5ca61b2f9f3e8d81d85ba2bda88f42523e77' => 
+    '62a43250ee18a662e047889774df78861151f361' => 
     array (
-      0 => 'C:\\wamp64\\www\\sinapsis\\wp-content\\plugins\\sinapsispay_wp\\public\\partials\\create_transaction_button.tpl',
-      1 => 1712032510,
+      0 => '/home2/sinapsi6/public_html/wp-content/plugins/sinapsispay_wp/public/partials/create_transaction_button.tpl',
+      1 => 1711776361,
       2 => 'file',
     ),
   ),
@@ -20,17 +20,15 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_660b8b0548d969_37738711 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\wamp64\\www\\sinapsis\\wp-content\\plugins\\profile_wp\\public\\assets\\smarty\\libs\\plugins\\modifier.number_format.php','function'=>'smarty_modifier_number_format',),));
+function content_6607a2889d2655_23823836 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/home2/sinapsi6/public_html/wp-content/plugins/profile_wp/public/assets/smarty/libs/plugins/modifier.number_format.php','function'=>'smarty_modifier_number_format',),));
 ?>
-
-<?php if ($_smarty_tpl->tpl_vars['perfil_user']->value == false) {?>
 
 <?php if ($_smarty_tpl->tpl_vars['display_price']->value == 'si') {?>
 <div class="col-12 d-inline-flex">
   <button onclick="create_transaction(<?php echo $_smarty_tpl->tpl_vars['id_curso']->value;?>
 )" type="button">
-        <div style="width: 1rem; height: 1rem; margin-right: 6px; display: none;" class="spinner-border loading_create_transaction_user" role="status">
+        <div id="loading_create_transaction_user" style="width: 1rem; height: 1rem; margin-right: 6px; display: none;" class="spinner-border" role="status">
             <span class="visually-hidden">Loading...</span>
         </div>
         <?php echo $_smarty_tpl->tpl_vars['text_button']->value;?>
@@ -44,7 +42,7 @@ $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\wamp64\\www\\sinapsis\\w
 if ($_smarty_tpl->tpl_vars['display_price']->value == 'no') {?>
 <button onclick="create_transaction(<?php echo $_smarty_tpl->tpl_vars['id_curso']->value;?>
 )" type="button">
-    <div style="width: 1rem; height: 1rem; margin-right: 6px; display: none;" class="spinner-border loading_create_transaction_user" role="status">
+    <div id="loading_create_transaction_user" style="width: 1rem; height: 1rem; margin-right: 6px; display: none;" class="spinner-border" role="status">
         <span class="visually-hidden">Loading...</span>
     </div>
     <?php echo $_smarty_tpl->tpl_vars['text_button']->value;?>
@@ -126,7 +124,5 @@ if ($_smarty_tpl->tpl_vars['display_price']->value == 'no') {?>
     </div>
   </div>
 </div>
-
 <?php }
-}
 }

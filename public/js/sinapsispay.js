@@ -1,5 +1,5 @@
 function create_transaction(id_curso){
-
+    
     data = {
         "id_curso" : id_curso
     }
@@ -28,14 +28,18 @@ function create_transaction(id_curso){
 
                }else{
 
+                    if(res.status == false && res.response.code == 403){
+                        jQuery('#modalRegister').modal('show');
+                    }
+                
                }
                
             },
             beforeSend: function (qXHR, settings) {
-                jQuery('#loading_create_transaction_user').fadeIn();
+                jQuery('.loading_create_transaction_user').fadeIn();
             },
             complete: function () {
-                jQuery('#loading_create_transaction_user').fadeOut();
+                jQuery('.loading_create_transaction_user').fadeOut();
             },
         })
 
