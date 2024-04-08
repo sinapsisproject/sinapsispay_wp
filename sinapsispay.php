@@ -53,7 +53,6 @@
             $atts
         );
 
-
         $id_curso = $_GET["curso"];
 
         $smarty = new Smarty;
