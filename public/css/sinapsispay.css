@@ -45,3 +45,7 @@
     background: white !important;
     color: #445AFF !important;
 }
+.title-price{
+    font-weight: bold;
+    font-size: 35px;
+}

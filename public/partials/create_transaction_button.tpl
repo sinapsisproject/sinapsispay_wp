@@ -2,20 +2,20 @@
 {if $perfil_user == false}
 
 {if $display_price == 'si'}
-<div class="col-12 d-inline-flex">
+<div class="col-12 d-inline-flex mb-5">
   <button onclick="create_transaction({$id_curso})" type="button">
-        <div style="width: 1rem; height: 1rem; margin-right: 6px; display: none;" class="spinner-border loading_create_transaction_user" role="status">
+        <div style="width: 1rem; height: 1rem; margin-right: 6px; display: none;" class="spinner-border loading_create_transaction_user_1" role="status">
             <span class="visually-hidden">Loading...</span>
         </div>
         {$text_button}
         <i style="margin-left: 10px;" class="fa-solid fa-arrow-right"></i>
     </button>
-    <h3 class="title-price">$ {$curso->precio|number_format:0:',':'.'}</h3>
+    <h3 class="title-price">$ {$curso->precio|number_format:0:',':'.'}.-</h3>
 </div>
 {/if}
 {if $display_price == 'no'}
 <button onclick="create_transaction({$id_curso})" type="button">
-    <div style="width: 1rem; height: 1rem; margin-right: 6px; display: none;" class="spinner-border loading_create_transaction_user" role="status">
+    <div style="width: 1rem; height: 1rem; margin-right: 6px; display: none;" class="spinner-border loading_create_transaction_user_1" role="status">
         <span class="visually-hidden">Loading...</span>
     </div>
     {$text_button}

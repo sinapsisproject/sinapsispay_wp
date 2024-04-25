@@ -1,4 +1,7 @@
-function create_transaction(id_curso){
+
+
+
+function create_transaction(id_curso , modalRedirect = null){
     
     data = {
         "id_curso" : id_curso
@@ -29,17 +32,30 @@ function create_transaction(id_curso){
                }else{
 
                     if(res.status == false && res.response.code == 403){
-                        jQuery('#modalRegister').modal('show');
+                        if(modalRedirect == "register" || modalRedirect == null){
+                            jQuery('#modalRegister').modal('show');
+                        }else if(modalRedirect == "login"){
+                            jQuery('#modalLogin').modal('show');
+                        }
+                        
                     }
                 
                }
                
             },
             beforeSend: function (qXHR, settings) {
-                jQuery('.loading_create_transaction_user').fadeIn();
+                if(modalRedirect == 'register' || modalRedirect == null){
+                    jQuery('.loading_create_transaction_user_1').fadeIn();
+                }else if(modalRedirect == 'login'){
+                    jQuery('.loading_create_transaction_user_2').fadeIn();
+                }
             },
             complete: function () {
-                jQuery('.loading_create_transaction_user').fadeOut();
+                if(modalRedirect == 'register' || modalRedirect == null){
+                    jQuery('.loading_create_transaction_user_1').fadeOut();
+                }else if(modalRedirect == 'login'){
+                    jQuery('.loading_create_transaction_user_2').fadeOut()
+                }
             },
         })
 
