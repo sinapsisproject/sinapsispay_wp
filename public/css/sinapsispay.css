@@ -49,3 +49,31 @@
     font-weight: bold;
     font-size: 35px;
 }
+
+
+
+.title-pay-ok{
+    color: green;
+    font-size: 70px;
+}
+
+.title-pay-ok h1{
+    color: green !important;
+}
+
+.box-detail-pay{
+    background: #445AFF;
+    border-radius: 10px;
+    color: white;
+    padding: 30px;
+}
+
+
+.title-pay-error{
+    color: red;
+    font-size: 70px;
+}
+
+.title-pay-error h1{
+    color: red !important;
+}

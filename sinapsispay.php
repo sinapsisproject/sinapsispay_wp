@@ -84,9 +84,6 @@
     add_shortcode("shortcodecreatetransactionbutton" , "shortcode_create_transaction_button");
 
 
-
-
-
     function shortcode_validate_transaction($atts){
 
         $token_ws = $_POST["token_ws"];    
@@ -100,6 +97,47 @@
     }
 
     add_shortcode("shortcodevalidatetransaction" , "shortcode_validate_transaction");
+
+
+    function shortcode_pago_ok($atts){
+
+        $order = $_GET["order"];
+
+        $token = get_option('tokensinapsisplatform');
+
+        $smarty = new Smarty;
+
+        $smarty->setTemplateDir(dirname(__FILE__) . '/public/partials/');
+        $smarty->setCompileDir(dirname(__FILE__) .'/public/compile/');
+
+        $data_order = RfCoreCurl::curl('/api/pay/data_order/'.$order , 'GET' , $token , NULL);
+
+        $smarty->assign('order' , $order);
+        $smarty->assign('fecha' , $data_order->response->fecha);
+        $smarty->assign('usuario' , $data_order->response->usuario);
+        $smarty->assign('curso' , $data_order->response->curso);
+
+
+        return $smarty->fetch('pago_ok.tpl');
+
+    }
+
+    add_shortcode("shortcodepagook" , "shortcode_pago_ok");
+
+
+    function shortcode_pago_error($atts){
+
+        $smarty = new Smarty;
+
+        $smarty->setTemplateDir(dirname(__FILE__) . '/public/partials/');
+        $smarty->setCompileDir(dirname(__FILE__) .'/public/compile/');
+
+        return $smarty->fetch('pago_error.tpl');
+
+    }
+
+    add_shortcode("shortcodepagoerror" , "shortcode_pago_error");
+
 
 
 ?>
