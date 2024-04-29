@@ -31,7 +31,7 @@
 
         <div class="row">
             <div class="col-12 text-end">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
+                <a class="btn-close-auth" data-bs-dismiss="modal" aria-label="Close"><i style="color: #aaa;" class="fa-solid fa-xmark"></i></a>
             </div>
         </div>
 
