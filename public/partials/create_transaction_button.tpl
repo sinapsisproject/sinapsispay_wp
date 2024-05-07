@@ -44,7 +44,7 @@
 
         <div class="row">
 
-            <div class="col-12 col-md-5 img-curso-pay text-end">
+            <div class="col-12 col-md-5 img-curso-pay text-center text-md-end">
                 <img style="width: 80%;" src="{$curso->imagen}" alt="">
             </div>
             <div class="col-12 col-md-7 description-pay">
