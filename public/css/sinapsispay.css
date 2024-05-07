@@ -77,3 +77,30 @@
 .title-pay-error h1{
     color: red !important;
 }
+
+
+@media (max-width: 991px) {
+   .description-pay{
+    padding: 20px;
+    text-align: left;
+   }
+   .description-pay h3{
+    font-size: 23px;
+   }
+   .description-pay p{
+    font-size: 14px;
+   }
+   .price-pay h3{
+    color: white;
+    margin: 0px;
+    font-size: 18px;
+   }
+   .box-total-pay {
+    padding: 20px;
+    color: white;
+    }
+    .box-total-pay{
+        margin-top: 60px;
+        padding: 0px;
+    }
+}

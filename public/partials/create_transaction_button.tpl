@@ -44,13 +44,14 @@
 
         <div class="row">
 
-            <div class="col-5 img-curso-pay text-end">
+            <div class="col-12 col-md-5 img-curso-pay text-end">
                 <img style="width: 80%;" src="{$curso->imagen}" alt="">
             </div>
-            <div class="col-7 description-pay">
+            <div class="col-12 col-md-7 description-pay">
                 <h3 style="color: white;">{$curso->nombre}</h3>
                 <p>{$curso->descripcion_corta}</p>
 
+            <div class="col-12">
                 <div class="row">
                     <div class="col-6 doctor-pay">
                         <p>{$instructor->nombre}</p>
@@ -59,11 +60,10 @@
                         <h3 style="color: white;">$ {$curso->precio|number_format:0:',':'.'}</h3>
                     </div>
                 </div>
-
             </div>
 
-
             <div class="row box-total-pay">
+
                 <div class="col-6 text-start subtotal-pay">
                     <p>Subtotal</p>
                 </div>
@@ -77,17 +77,21 @@
                 <div class="col-6 text-end total-price">
                     <p>${$curso->precio|number_format:0:',':'.'}</p>
                 </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12 text-center mb-5">
-                    <div id="divbuttonpay"></div>
-                </div>
-
-                
-
 
             </div>
+
+
+
+        </div>
+
+
+        
+
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+                <div id="divbuttonpay"></div>
+            </div>
+        </div>
 
         </div>
 
