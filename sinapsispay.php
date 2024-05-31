@@ -59,7 +59,8 @@
         $smarty->setTemplateDir(dirname(__FILE__) . '/public/partials/');
         $smarty->setCompileDir(dirname(__FILE__) .'/public/compile/');
 
-        $token = get_option('tokensinapsisplatform');
+        $user_id = get_current_user_id();
+        $token   = get_user_meta($user_id, 'tokensinapsisplatform', true);
 
         $validate_user = RfCoreCurl::curl('/api/users/validate_course_user/'.$id_curso , 'GET' , $token, NULL);
         $response_curso = RfCoreCurl::curl('/api/course/get_course_by_id_free_data/'.$id_curso , 'GET' , NULL, NULL);
@@ -92,7 +93,8 @@
         $smarty->setTemplateDir(dirname(__FILE__) . '/public/partials/');
         $smarty->setCompileDir(dirname(__FILE__) .'/public/compile/');
 
-        $token = get_option('tokensinapsisplatform');
+        $user_id = get_current_user_id();
+        $token   = get_user_meta($user_id, 'tokensinapsisplatform', true);
 
     }
 
@@ -103,7 +105,8 @@
 
         $order = $_GET["order"];
 
-        $token = get_option('tokensinapsisplatform');
+        $user_id = get_current_user_id();
+        $token   = get_user_meta($user_id, 'tokensinapsisplatform', true);
 
         $smarty = new Smarty;
 

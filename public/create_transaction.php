@@ -4,7 +4,8 @@
 
     $id_curso = $_POST["id_curso"];
 
-    $token = get_option('tokensinapsisplatform');
+    $user_id = get_current_user_id();
+    $token   = get_user_meta($user_id, 'tokensinapsisplatform', true);
 
     if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
         $protocolo = 'https://';
