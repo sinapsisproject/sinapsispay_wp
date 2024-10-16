@@ -50,6 +50,15 @@
     font-size: 35px;
 }
 
+.button-pay{
+    background-color: white !important;
+    color: #445AFF !important;
+    border-style: solid !important;
+    border-width: 1px 1px 1px 1px !important; 
+    border-color:#2c42e5 !important;
+    padding: 014px 16px 014px 16px !important;
+    font-weight: 600 !important;
+}
 
 
 .title-pay-ok{

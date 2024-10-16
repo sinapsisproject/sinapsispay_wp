@@ -22,8 +22,8 @@
                 <div class="col-5 mt-3">
                     <p>Total:</p>
                 </div>
-                <div class="col-7 mt-3">
-                    <p>$ {$curso->precio|number_format:0:',':'.'}.-</p>
+                <div class="col-7 mt-3" style="text-align: end;">
+                    <p>$ {$precio|number_format:0:',':'.'} {$moneda}.-</p>
                 </div>
                 <div class="col-12 text-center mt-5">
                     <p style="font-size: 13px;">Se ha enviado automáticamente un comprobante de pago a tu correo electrónico {$usuario->email}</p>

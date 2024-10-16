@@ -1,6 +1,3 @@
-
-
-
 function create_transaction(id_curso , modalRedirect = null){
     
     data = {
@@ -16,22 +13,29 @@ function create_transaction(id_curso , modalRedirect = null){
             },
             success: function(res) {
 
-                console.log(res);
 
                if(res.status == true){
 
-                jQuery('#divbuttonpay').html(
-                    '<form action="'+res.response.response.url+'" method="POST">'+
-                    '<input type="hidden" name="token_ws" value="'+res.response.response.token+'"/>'+
-                    '<input type="submit" value="Ir a pagar"/>'+
-                    '</form>'
-                );
+                if(res.response_webpay.status == true){
+                    jQuery('#divbuttonpay').html(
+                        '<form action="'+res.response_webpay.response.url+'" method="POST">'+
+                        '<input type="hidden" name="token_ws" value="'+res.response_webpay.response.token+'"/>'+
+                        '<input class="button-pay" type="submit" value="Pagar desde Chile"/>'+
+                        '</form>'
+                    );
+                }
 
+                if(res.response_paypal.status == true){
+                    jQuery('#divbuttonpaypal').html(
+                        '<a class="button-pay" type="button" href="'+res.response_paypal.url_redirect+'">Pagar con USD</a>'
+                    );
+                }
+                
                 jQuery('#modalpay').modal('show');
 
                }else{
 
-                    if(res.status == false && res.response.code == 403){
+                    if(res.status == false && res.response_webpay.code == 403){
                         if(modalRedirect == "register" || modalRedirect == null){
                             jQuery('#modalRegister').modal('show');
                         }else if(modalRedirect == "login"){

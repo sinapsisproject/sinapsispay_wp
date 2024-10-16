@@ -104,6 +104,7 @@
     function shortcode_pago_ok($atts){
 
         $order = $_GET["order"];
+        $motor = $_GET["motor"];
 
         $user_id = get_current_user_id();
         $token   = get_user_meta($user_id, 'tokensinapsisplatform', true);
@@ -119,6 +120,20 @@
         $smarty->assign('fecha' , $data_order->response->fecha);
         $smarty->assign('usuario' , $data_order->response->usuario);
         $smarty->assign('curso' , $data_order->response->curso);
+
+
+        if($motor == "paypal"){
+
+            $precio = $data_order->response->curso->precio / 1000;
+            $smarty->assign('precio' , $precio);
+            $smarty->assign('moneda' , "USD");
+            
+        }else if($motor == "webpay"){
+            
+            $smarty->assign('precio' , $data_order->response->curso->precio);
+            $smarty->assign('moneda' , "");
+
+        }
 
 
         return $smarty->fetch('pago_ok.tpl');

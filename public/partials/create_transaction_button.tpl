@@ -84,12 +84,12 @@
 
         </div>
 
-
-        
-
         <div class="row">
-            <div class="col-12 text-center mb-5">
+            <div class="col-12 col-md-6 text-center mb-5">
                 <div id="divbuttonpay"></div>
+            </div>
+            <div class="col-12 col-md-6 text-center mb-5">
+                <div id="divbuttonpaypal"></div>
             </div>
         </div>
 
