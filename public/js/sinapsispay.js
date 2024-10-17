@@ -13,7 +13,6 @@ function create_transaction(id_curso , modalRedirect = null){
             },
             success: function(res) {
 
-
                if(res.status == true){
 
                 if(res.response_webpay.status == true){
@@ -35,7 +34,7 @@ function create_transaction(id_curso , modalRedirect = null){
 
                }else{
 
-                    if(res.status == false && res.response_webpay.code == 403){
+                    if(res.status == false){
                         if(modalRedirect == "register" || modalRedirect == null){
                             jQuery('#modalRegister').modal('show');
                         }else if(modalRedirect == "login"){
